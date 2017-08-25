@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Porras Valle</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw=="
+        crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/sweetalert2/6.4.2/sweetalert2.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/42168cb4a1.js"></script>
+    <?!= include('Stylesheet'); ?>
+        <?!= include('Printsheet'); ?>
+
+
+</head>
+
+<body>
+    <div class="container" id="images">
+        <img id="gob-log" src="https://drive.google.com/uc?export=view&id=0B4i7dRhYdahpb1BnYmhGdEcxam8">
+
+        <img id="uv-log" src="https://drive.google.com/uc?export=view&id=0B4i7dRhYdahpd3BaQzIyaHR2S28">
+
+        <img id="porras-log" src="http://drive.google.com/uc?export=view&id=0B4i7dRhYdahpMEZqWmNvdXVwV00">
+    </div>
+    <div class="container" id="PageHeader">
+        <h1 id="porras-header">INFORMACIÓN GENERAL LOS MAS PORRAS VALLE</h1>
+        <img id="ulog" src="https://drive.google.com/uc?export=view&id=0B4i7dRhYdahpb1BnYmhGdEcxam8" style="width:100px; margin-top:-85px ;height:100px; float:right;">
+        <img id="glog" src="https://drive.google.com/uc?export=view&id=0B4i7dRhYdahpd3BaQzIyaHR2S28" style="width:80px; height:100px;margin:-85px 0 0 200px; float:right; ">
+    </div>
+
+    <div class="row" id="print-header">
+        <h1 align="center">FICHA GENERAL ESTUDIANTE </h1>
+        <h2 id="name-title" align="center"></h2>
+    </div>
+
+    <div class="container" id="images2">
+        <img id="gob-log2" src="https://drive.google.com/uc?export=view&id=0B4i7dRhYdahpb1BnYmhGdEcxam8">
+
+        <img id="uv-log2" src="https://drive.google.com/uc?export=view&id=0B4i7dRhYdahpd3BaQzIyaHR2S28">
+
+        <img id="porras-log2" src="http://drive.google.com/uc?export=view&id=0B4i7dRhYdahpMEZqWmNvdXVwV00">
+    </div>
+
+
+    <div class="row" id="print-header2">
+        <h1 align="center">FICHA GENERAL ESTUDIANTE </h1>
+        <h2 id="name-title2" align="center"></h2>
+    </div>
+
+    <div class="container" id="PageContent">
+        <div class="row">
+            <form>
+                <div class="form-inline" id="busca">
+                    <img src="http://drive.google.com/uc?export=view&id=0B4i7dRhYdahpMEZqWmNvdXVwV00" style="float: right; width: 300px;">
+                    <h4><label class="col-sm-1" for="user_name">Cédula:</label></h4>
+                    <input class="col-sm-3" id="user_name" name="user_name" onkeypress="return valida(event)">
+                    <input id="btn-save" type="button" class="btn btn-warning " value="Consultar" onclick="sendForm()" style="width:100px;height:30px" readonly />
+                    <!--<input id="btn-cancel" class="btn btn-danger " value="Cancelar" onclick="exitForm()" style="width:100px;height:30px" readonly />-->
+                </div>
+            </form>
+        </div>
+
+        <div class="row" id="section" hidden>
+            <div class="col-md-6" id="estudiante-general">
+                <form class="form-horizontal" id="trackform">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="nombre-ficha">Nombre</label>
+                        <div class="col-md-8">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-user-o fa-1x"></i>
+                                </div>
+                                <input id="nombre-ficha" name="nombre-ficha" type="text" class="form-control input-md" readonly>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="documento-ficha">Documento de Identidad</label>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-id-card-o fa-1x"></i>
+                                </div>
+                                <input id="documento-ficha" name="documento-ficha" type="text" class="form-control input-md" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="sede-ficha">Nodo</label>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-university fa-1x"></i>
+                                </div>
+                                <input id="sede-ficha" name="sede-ficha" type="text" class="form-control input-md" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="municipio-ficha">Municipio Procedencia</label>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-map-marker fa-1x"></i>
+                                </div>
+                                <input id="municipio-ficha" name="municipio-ficha" type="text" class="form-control input-md" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="universidad">Estudia Univalle</label>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-university fa-1x"></i>
+                                </div>
+                                <input id="universidad" name="universidad" type="text" class="form-control input-md" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" id="estado-admitido" style="display:none">
+                        <label class="col-md-4 control-label" for="carrera-actual">Carrera</label>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-graduation-cap fa-1x"></i>
+                                </div>
+                                <input id="carrera-actual" name="carrera-actual" type="text" class="form-control input-md" readonly>
+                            </div>
+                        </div>
+                        <p id="admitido-p" style="margin-top:8px"></p>
+                    </div>
+                    <button id="edit-btn" onClick="editCells()" type="button"><i class="fa fa-pencil-square-o"></i></button>
+                    <button id="save-btn" onClick="saveCells()" type="button"><i class="fa fa-floppy-o"></i></button>
+                    <!--  <button onClick="print()"><i class="fa fa-print"></i></button>-->
+
+                    <!--<div class="form-group">
+                        <label class="col-md-4 control-label" for="fcohorte"></label>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-home fa-1x"></i>
+                                </div>
+                                <input id="fcohorte" name="fcohorte" type="text" class="form-control input-md" readonly>
+                            </div>
+                        </div>
+                    </div>-->
+
+
+                </form>
+            </div>
+
+            <div class="col-md-4" id="foto">
+                <img id="img-profile" />
+                <form id="myForm" align="center">
+                    <label for="myFile" class="btn btn-default">Actualizar Foto</label>
+                    <input type="file" id="myFile" name="myFile" style="visibility:hidden;">
+                    <input id="cedd" name="cedd" hidden>
+                    <input type="submit" value="Subir" onclick="this.value='Actualizando..';
+                    google.script.run.withSuccessHandler(fileUploaded)
+                    .uploadFiles(this.parentNode);
+                    return false;">
+                </form>
+                <div id="output"></div>
+            </div>
+        </div>
+        <div class="row" id="pestanas" hidden>
+            <div class="container">
+                <ul class="nav nav-tabs" id="nav-bar">
+                    <li class="active"><a data-toggle="tab" href="#estudiante-tab">Estudiante</a></li>
+                    <li><a data-toggle="tab" href="#vocacional-tab">Vocacional</a></li>
+                    <li><a data-toggle="tab" href="#caracterizacion-tab">Caracterización</a></li>
+                    <li><a data-toggle="tab" href="#diagnostico-tab">Perfil</a></li>
+                </ul>
+
+                <div class="tab-content" id="tab">
+                    <div id="estudiante-tab" class="tab-pane fade in active">
+                        <div class="row">
+                            <div class="col-md-10 ">
+                                <form class="form-horizontal">
+                                    <fieldset>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="direccion">Dirección</label>
+                                            <div class="col-md-4">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-home fa-1x"></i>
+                                                    </div>
+                                                    <input id="direccion" name="direccion" type="text" class="form-control input-md" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="nacimiento">Fecha de Nacimiento</label>
+                                            <div class="col-md-4">
+
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-birthday-cake fa-1x"></i>
+                                                    </div>
+                                                    <input id="nacimiento" name="nacimiento" type="text" class="form-control input-md" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" style="display:none">
+                                            <label class="col-md-4 control-label" for="edad">Edad</label>
+                                            <div class="col-md-4">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-birthday-cake fa-1x"></i>
+                                                    </div>
+                                                    <input id="edad" name="edad" type="text" class="form-control input-md" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="telefono">Telefono</label>
+                                            <div class="col-md-4">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-phone fa-1x"></i>
+                                                    </div>
+                                                    <input id="telefono" name="telefono" type="text" class="form-control input-md" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="celular">Celular</label>
+                                            <div class="col-md-4">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-mobile fa-1x" style="font-size: 20px;"></i>
+                                                    </div>
+                                                    <input id="celular" name="celular" type="text" class="form-control input-md" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="email">Email</label>
+                                            <div class="col-md-4">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-envelope-o fa-1x"></i>
+                                                    </div>
+                                                    <input id="email" name="email" type="text" class="form-control input-md" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="colegio">Colegio</label>
+                                            <div class="col-md-4">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-university fa-1x"></i>
+                                                    </div>
+                                                    <input id="colegio" name="colegio" type="text" class="form-control input-md" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="sedeCol">Sede Colegio</label>
+                                            <div class="col-md-4">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-map-marker fa-1x" style="font-size: 20px;"></i>
+                                                    </div>
+                                                    <input id="sedeCol" name="sedeCol" type="text" class="form-control input-md" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="puntaje">Puntaje Icfes</label>
+                                            <div class="col-md-4">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-line-chart fa-1x"></i>
+                                                    </div>
+                                                    <input id="puntaje" name="puntaje" type="text" class="form-control input-md" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" style="display:none">
+                                            <label class="col-md-4 control-label" for="estudia">Estudia</label>
+                                            <div class="col-md-4">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-graduation-cap fa-1x"></i>
+                                                    </div>
+                                                    <input id="estudia" name="estudia" type="text" class="form-control input-md" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="vocacional-tab">
+                        <div id="row-opcion" class="row">
+                            <h3 align="center">Que carrera aspira ingresar</h3>
+                            <div class="col-md-12">
+                                <div class="form-inline">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="primeraopcion">Opcion 1</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="primeraopcion" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="segundaopcion">Opcion 2</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="segundaopcion" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="terceraopcion">Opcion 3</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="terceraopcion" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="row-inscripciones" class="row">
+                            <h3 align="center">Inscripciones Univalle</h3>
+                            <br>
+                            <div class="col-md-3" id="op1">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="pin1">Pin 1</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="pin1" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="cod-pin1">Código</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="cod-pin1" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="programa1">Programa</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="programa1" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="periodo1">Periodo</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="periodo1" value="AGOSTO-DICIEMBRE 2017" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="excepcion1">Exepción</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="exepcion1" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-9">
+                                            <div class="input-group ">
+                                                <input id="PIN1" type="text" class="form-control input-md" style="height:50px" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3" id="op2">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="pin2">Pin 2</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="pin2" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="cod-pin2">Código</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="cod-pin2" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="programa2">Programa</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="programa2" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="periodo2">Periodo</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="periodo2" value="AGOSTO-DICIEMBRE 2017" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="excepcion2">Exepción</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="exepcion2" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="PIN2" type="text" class="form-control input-md" style="height:50px" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3" id="op3">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="pin3">Pin 3</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="pin3" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="cod-pin3">Código</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="cod-pin3" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="programa3">Programa</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="programa3" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="periodo3">Periodo</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="periodo3" value="FEBRERO-JUNIO 2018" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="excepcion3">Exepción</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="exepcion3" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="PIN3" type="text" class="form-control input-md" readonly style="display:none">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3" id="op4">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="pin4">Pin 4</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="pin4" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="cod-pin4">Código</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="cod-pin4" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="programa4">Programa</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="programa4" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="periodo4">Periodo</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="periodo4" value="FEBRERO-JUNIO 2018" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="excepcion4">Exepción</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="exepcion4" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" style="display:none">
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="PIN4" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--col close -->
+                        </div>
+                        <!--row close -->
+                    </div>
+                    <!--tab close -->
+                    <div class="tab-pane fade" id="caracterizacion-tab">
+                        <div id="row-caract" class="row">
+                            <hr>
+                            <br>
+                            <h2 align="center">Caracterizacion Estudiante</h2>
+                            <br>
+
+                            <div class="col-md-4" id="col-vivienda">
+                                <h3>Vivienda</h3>
+                                <br>
+                                <br>
+                                <div class="form-horizontal">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="sexo">Sexo</label>
+                                            <div class="col-md-9">
+                                                <div class="input-group">
+                                                    <input id="sexo" type="text" class="form-control input-md" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="hijos">Número de hijos</label>
+                                            <div class="col-md-9">
+                                                <div class="input-group">
+                                                    <input id="hijos" type="text" class="form-control input-md" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="municipio-actual">Municipio actual</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="municipio-actual" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" style="display: none">
+                                        <label class="col-md-3 control-label" for="zona-municipio">Zona actual</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="zona-municipio" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="zona-familia">Zona Familia</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="zona-familia" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="estrato-est">Estrato</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="estrato-est" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="anos-viviendo">Años residiendo </label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="anos-viviendo" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="quien-vive">Con quien vive</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <textarea id="quien-vive" type="text" rows="2" class="form-control input-md" readonly></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4" id="col-gastos">
+                                <h3>Ingresos</h3>
+                                <br>
+                                <br>
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="depende-familia">Depende de la familia</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="depende-familia" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="depende-transporte">Depende gastos transporte</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="depende-transporte" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="depende-alimentacion">Depende gastos alimentación</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="depende-alimentacion" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="depende-estudio">Depende gastos estudiantiles</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="depende-estudio" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="trabaja">Trabaja</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="trabaja" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="horas-trabajo">Horas de Trabajo</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="horas-trabajo" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="col-colegio" class="col-md-4">
+                                <h3>Información Colegio</h3>
+                                <br>
+                                <br>
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="colegio-bachiller">Colegio Bachillerato</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="colegio-bachiller" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="final-cole">Año finalización</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="final-cole" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="tipo-titulo">Tipo de titulo obtenido</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="tipo-titulo" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="ubicacion-colegio">Ubicacion Colegio</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="ubicacion-colegio" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="jornada">Jornada clases</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="jornada" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="zona-cole">Zona Colegio</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input id="zona-cole" type="text" class="form-control input-md" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--col close -->
+                        </div>
+                        <!--row close -->
+                    </div>
+                    <!--tab close -->
+                    <div id="diagnostico-tab" class="tab-pane fade">
+                        <div class="row">
+                            <h2 align="center">Diagnostico Estudiante</h2>
+                            <div class="col-md-4" id="diag1">
+                                <form>
+                                    <div class="form-group">
+                                        <label class="col-md-12 control-label" for="desempeno-icfes">Desempeño en las pruebas SABER 11</label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <textarea id="desempeno-icfes" name="desempeno-icfes" type="text" class="form-control input-md" cols="40" rows="6" readonly>
+                                                </textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12 control-label" for="aspira-centrales">Carrera a la que aspira en las sedes centrales de la Universidad del Valle</label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+
+                                                <textarea id="aspira-centrales" name="aspira-centrales" type="text" class="form-control input-md" cols="40" rows="6" readonly>
+                                                </textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12 control-label" for="aspira-regional">Carrera a la que aspira en una sede regional de la Universidad del Valle</label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+
+                                                <textarea id="aspira-regional" name="aspira-regional" type="text" class="form-control input-md" cols="40" rows="6" readonly>
+                                                </textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                            <div class="col-md-4" id="diag2">
+                                <form>
+                                    <div class="form-group">
+                                        <label class="col-md-12 control-label" for="expectativas">Expectativas de ingreso a la universidad</label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+
+                                                <textarea id="expectativas" name="expectativas" type="text" class="form-control input-md" cols="40" rows="9" readonly>
+                                                </textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12 control-label" for="elemento-familiar">Elementos relacionados con el capital familiar y cultural</label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <textarea id="elemento-familiar" name="elemento-familiar" type="text" class="form-control input-md" cols="40" rows="9" readonly>
+                                                </textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12 control-label" for="elemento-academico">Elementos relacionados con el capital académico y escolar</label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <textarea id="elemento-academico" name="elemento-academico" type="text" class="form-control input-md" cols="40" rows="9" readonly>
+                                                </textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-md-4" id="diag3">
+                                <form>
+                                    <div class="form-group">
+                                        <label class="col-md-12 control-label" for="fenomenos">Fenómenos, problemáticas o situaciones de interés</label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+
+                                                <textarea id="fenomenos" name="fenomenos" type="text" class="form-control input-md" cols="40" rows="6" readonly>
+                                                    </textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12 control-label" for="apoyo-estudiante">Necesidades de apoyo del estudiante</label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <textarea id="apoyo-estudiante" name="apoyo-estudiante" type="text" class="form-control input-md" cols="40" rows="6" readonly>
+                                            </textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12 control-label" for="observaciones-generales">Observaciones generales sobre el estudiante</label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <textarea id="observaciones-generales" name="observaciones-generales" type="text" class="form-control input-md" cols="40" rows="6" readonly>
+                                            </textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--Close Tab -->
+                </div>
+                <!--Close all tabs-->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <h5>Proyecto Los Mas Porras Del Valle</h5>
+        <h5>losmasporras@correounivalle.edu.co</h5>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/sweetalert2/6.4.2/sweetalert2.js"></script>
+    <script src="https://cdn.jsdelivr.net/sweetalert2/6.4.2/sweetalert2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        function valida(e) {
+            tecla = (document.all) ? e.keyCode : e.which;
+
+            //Tecla de retroceso para borrar, siempre la permite
+            if (tecla == 8) {
+                return true;
+            }
+
+
+            // Patron de entrada, en este caso solo acepta numeros
+            patron = /[0-9]/;
+            tecla_final = String.fromCharCode(tecla);
+            return patron.test(tecla_final);
+        }
+
+        function print() {
+            window.print();
+        }
+
+        function changeStyle() {
+            //             var mycss=document.styleSheets[4];
+            //             var bodyrule= mycss.cssRules? mycss.cssRules[0]: mycss.rules[0];
+            //             console.log(mycss);
+            //             console.log(bodyrule);
+            //             //bodyrule.style.transform = "scale(.5) translate(-150px,-300px)";
+            $('body').animate({
+                transform: "translate(-150px) translateY(-300px) scale(.5)"
+            });
+        }
+
+        function admitido(pin1, pin2) {
+            var resultado1 = pin1.toString();
+            var resultado2 = pin2.toString();
+            if (resultado1.includes("NO")) {
+                $('#PIN1').css("display", "block");
+                $('#PIN1').val("NO ADMITIDO");
+                $('#PIN1').css('background-color', '#EC7063');
+            } else if (resultado1.includes("ADMITIDO")) {
+                $('#PIN1').css("display", "block");
+                $('#PIN1').val("ADMITIDO");
+                $('#PIN1').css('background-color', '#58D68D');
+            } else if (resultado1.includes("PENDIENTE")) {
+                $('#PIN1').css("display", "block");
+                $('#PIN1').val(resultado);
+                $('#PIN1').css('background-color', 'yellow');
+            }
+
+            if (resultado2.includes("NO")) {
+                $('#PIN2').css("display", "block");
+                $('#PIN2').val("NO ADMITIDO");
+                $('#PIN2').css('background-color', '#EC7063');
+            } else if (resultado2.includes("ADMITIDO")) {
+                $('#PIN2').css("display", "block");
+                $('#PIN2').val("ADMITIDO");
+                $('#PIN2').css('background-color', '#58D68D');
+            } else if (resultado2.includes("PENDIENTE")) {
+                $('#PIN2').css("display", "block");
+                $('#PIN2').val(resultado);
+                $('#PIN2').css('background-color', 'yellow');
+            }
+        }
+
+
+        function mostrarInfo(arregloEst) {
+
+            if (!arregloEst) {
+
+                $("#btn-save").removeAttr("disabled");
+                swal({
+                    title: 'Advertencia ...',
+                    text: 'La cedula ingresada no corresponde a ningún estudiante',
+                    type: 'warning',
+                });
+
+            } else {
+
+                $("#section").attr('hidden', false);
+                $('#pestanas').attr('hidden', false);
+                $("#nombre-ficha").val(arregloEst[2]);
+                $('#name-title').text(arregloEst[2]);
+                $("#documento-ficha").val(arregloEst[3]);
+                $("#cedd").val(arregloEst[3]);
+                $("#sede-ficha").val(arregloEst[0]);
+                $("#municipio-ficha").val(arregloEst[1]);
+                $("#myFile").change(function() {
+                    readURL(this);
+                });
+
+                $("#direccion").val(arregloEst[4]);
+                $("#telefono").val(arregloEst[5]);
+                $("#celular").val(arregloEst[7]);
+                $("#email").val(arregloEst[6]);
+                $("#colegio").val(arregloEst[8]);
+                $("#sedeCol").val(arregloEst[9]);
+                $("#puntaje").val(arregloEst[10]);
+                $("#estudia").val(arregloEst[11]);
+                $("#universidad").val(arregloEst[12]);
+                $("#nacimiento").val(arregloEst[13]);
+                $("#edad").val(getAge(arregloEst[13].toString()));
+
+                //Vocacional Tab
+                $("#primeraopcion").val(arregloEst[14]);
+                $("#segundaopcion").val(arregloEst[15]);
+                $("#terceraopcion").val(arregloEst[16]);
+                $("#pin1").val(arregloEst[17]);
+                $("#cod-pin1").val(arregloEst[18]);
+                $("#programa1").val(arregloEst[19]);
+                $('#exepcion1').val(arregloEst[20]);
+                $("#pin2").val(arregloEst[21]);
+                $("#cod-pin2").val(arregloEst[22]);
+                $("#programa2").val(arregloEst[23]);
+                $('#exepcion2').val(arregloEst[24]);
+                $("#pin3").val(arregloEst[25]);
+                $("#cod-pin3").val(arregloEst[26]);
+                $("#programa3").val(arregloEst[27]);
+                $('#exepcion3').val(arregloEst[28]);
+                $("#pin4").val(arregloEst[29]);
+                $("#cod-pin4").val(arregloEst[30]);
+                $("#programa4").val(arregloEst[31]);
+                $('#exepcion4').val(arregloEst[32]);
+
+
+                if ($("#universidad").val() == "UNIVALLE") {
+                    $("#universidad").val("SI");
+                } else {
+                    $("#universidad").val("NO");
+                }
+
+                if ($("#pin1").val() == "NO LO USÓ" || $("#programa1").val() == "") {
+                    $("#op1").css('display', 'none')
+                }
+                if ($("#pin2").val() == "NO LO USÓ" || $("#programa2").val() == "" || $("#programa1").val() == "N/A") {
+                    $("#op2").css('display', 'none')
+                }
+                if ($("#pin3").val() == "NO LO USÓ" || $("#programa3").val() == "" || $("#programa1").val() == "N/A") {
+                    $("#op3").css('display', 'none')
+                }
+                if ($("#pin4").val() == "NO LO USÓ" || $("#programa4").val() == "" || $("#programa1").val() == "N/A") {
+                    $("#op4").css('display', 'none')
+                }
+                admitido(arregloEst[33], arregloEst[34]);
+                //  changeStyle();
+
+                //Caracterizacion Tab
+                $("#sexo").val(arregloEst[35]);
+                $("#hijos").val(arregloEst[36]);
+                $("#municipio-actual").val(arregloEst[37]);
+                $("#zona-municipo").val(arregloEst[38]);
+                $("#zona-familia").val(arregloEst[39]);
+                $("#estrato-est").val(arregloEst[40])
+                $('#anos-viviendo').val(arregloEst[41]);
+                $("#quien-vive").val(arregloEst[42]);
+
+                $("#depende-familia").val(totalidadGastos(arregloEst[43]));
+                $("#depende-transporte").val(totalidadGastos(arregloEst[44]));
+                $('#depende-alimentacion').val(totalidadGastos(arregloEst[45]));
+                $("#depende-estudio").val(totalidadGastos(arregloEst[46]));
+                $("#trabaja").val(arregloEst[47]);
+                $("#horas-trabajo").val(arregloEst[48]);
+
+                $('#colegio-bachiller').val(arregloEst[49]);
+                $("#final-cole").val(arregloEst[50]);
+                $("#tipo-titulo").val(arregloEst[51]);
+                $("#ubicacion-colegio").val(arregloEst[52]);
+                $('#jornada').val(arregloEst[53]);
+                $("#zona-cole").val(arregloEst[54]);
+
+                //Perfil
+                $("#desempeno-icfes").val(arregloEst[55]);
+                $("#aspira-centrales").val(arregloEst[56]);
+                $("#aspira-regional").val(arregloEst[57]);
+                $("#expectativas").val(arregloEst[58]);
+                $("#elemento-familiar").val(arregloEst[60]);
+                $("#elemento-academico").val(arregloEst[61]);
+                $("#fenomenos").val(arregloEst[59]);
+                $("#apoyo-estudiante").val(arregloEst[62]);
+                $("#observaciones-generales").val(arregloEst[63]);
+                console.log(arregloEst[64]);
+                if (arregloEst[64].toString() == 'ADMITIDO' || arregloEst[64].toString().includes('PENDIENTE') ||
+                    arregloEst[64].toString().includes('ESTUDIANTE ACTIVO') || arregloEst[64].toString().includes('RESERVA')) {
+                    // $('#admitido-p').text(arregloEst[64]);
+                    // $('#carrera-actual').val(arregloEst[65]);
+                    $('#estado-admitido').css('display', 'block');
+                } else {
+                    $('#estado-admitido').css('display', 'none');
+                }
+            }
+        }
+
+        function totalidadGastos(x) {
+            var res = null;
+            if (x == "1") {
+                res = "Nada";
+            } else if (x == "2") {
+                res = "Poco";
+            } else if (x == "3") {
+                res = "Parcialmente";
+            } else if (x == "4") {
+                res = "Mucho";
+            } else if (x == "5") {
+                res = "Totalmente";
+            }
+            return res;
+        }
+
+        function fileUploaded(status) {
+            $("#myForm").css("display", "none");
+            document.getElementById('output').innerHTML = status;
+
+            setTimeout(function() {
+                location.reload();
+            }, 2500);
+        }
+
+        function readURL(input) {
+
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $('#img-profile').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+
+        function updateDisplay(id) {
+            $("#img-profile").attr('src', "https://docs.google.com/uc?id=" + id);
+            //$("#img-profile").height(200);
+            //$("#img-profile").width(160);
+
+        }
+
+        function getInputs() {
+            var values = $("input").map(function() {
+                return $(this).val();
+            }).get();
+
+            return values;
+        }
+
+        function saveCells() {
+            $("input").prop("readonly", true);
+            $("#user_name").prop("readonly", false);
+            $("#save-btn").prop("disabled", true);
+
+            var dataEst = getInputs();
+            google.script.run.saveSheet(dataEst);
+        }
+
+        function editCells() {
+            var inputs = document.getElementsByTagName('input');
+
+            $("input").each(function(index) {
+                if (index < 20) {
+                    $(this).prop("readonly", false);
+                } else {
+                    $(this).prop("readonly", true);
+                }
+            });
+
+            // $("input").prop("readonly", false);
+
+            $("#edit-btn").prop("disabled", true);
+            $("#save-btn").prop("disabled", false);
+        }
+
+
+        function sendForm() {
+            cleanTable();
+            var ced = $("#user_name").val();
+            // $("#btn-save").attr("disabled", true);
+            if (ced == "") {
+                $("#btn-save").removeAttr("disabled");
+                swal({
+                    title: 'Advertencia ...',
+                    text: 'Ingrese una cedula para consultar',
+                    type: 'warning',
+                });
+
+            } else {
+                exitForm();
+                $("input").prop("readonly", true);
+                $("#user_name").prop("readonly", false);
+                $("#save-btn").prop("disabled", true);
+                google.script.run.withSuccessHandler(updateDisplay).getFolderContents(ced);
+                google.script.run.withSuccessHandler(mostrarInfo).cargarInfo(ced);
+            }
+        }
+
+        function exitForm() {
+            // $("#btn-save").removeAttr("disabled");
+            cleanTable();
+            $("#user_name").val("");
+            $("#section").attr('hidden', true);
+            $('#pestanas').attr('hidden', true);
+        }
+
+
+        function getAge(dateString) {
+
+            console.log(dateString);
+            var today = new Date();
+            console.log(today);
+            var birthDate = new Date(dateString.toString());
+            console.log(birthDate);
+            var age = today.getFullYear() - birthDate.getFullYear();
+
+            console.log(age);
+            var m = today.getMonth() - birthDate.getMonth();
+            console.log(m);
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            console.log(age);
+            return age;
+        }
+
+        function cleanTable() {
+            $("#direccion").val("");
+            $("#celular").val("");
+            $("#celular").val("");
+            $("#email").val("");
+            $("#colegio").val("");
+            $("#sedeCol").val("");
+            $("#puntaje").val("");
+            $("#estudia").val("");
+            $("#universidad").val("");
+            $("#primeraopcion").val("");
+            $("#segundaopcion").val("");
+            $("#pin1").val("");
+            $("#cod-pin1").val("");
+            $("#programa1").val("");
+            $("#pin2").val("");
+            $("#cod-pin2").val("");
+            $("#programa2").val("");
+            $("#pin3").val("");
+            $("#cod-pin3").val("");
+            $("#programa3").val("");
+            $("#pin4").val("");
+            $("#cod-pin4").val("");
+            $("#programa4").val("");
+
+        }
+    </script>
